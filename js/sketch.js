@@ -1,3 +1,4 @@
+//Demo on youtube:  https://youtu.be/SZ4yn803VMg
 const synth = new Tone.Synth();
 let reverbVal = 0;
 const reverb = new Tone.JCReverb(0.4);
