@@ -3,6 +3,7 @@ let reverbVal = 0;
 const reverb = new Tone.JCReverb(0.4);
 synth.connect(reverb);
 let dSlider;
+let whichKey = " ";
 
 let notes = {
   'a': 'C4',
@@ -28,11 +29,13 @@ function setup() {
 function draw() {
   background(220);
   text('move slider to increase/decrease sound delay' ,0, 350);
-  text('press buttons for sound' ,0, 150);
+  text('press keys from A-K on keyboard for sound' ,0, 150);
+  text("Keyboard key played: " + whichKey,100, 200);
 }
 
 function keyPressed() {
   let pressedNote = notes[key];
+  whichKey = key;
   console.log(pressedNote);
   synth.triggerAttackRelease(pressedNote, "8n");
 }
